@@ -2,88 +2,82 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+}
+body{
+    height: 100vh;
+    font-family: "Roboto",sans-serif;
+     background-color: rgb(29, 28, 28); 
+}
+li{
+    list-style: none;
+margin: 10px;
+}
+a{
+    text-decoration: none;
+    color: antiquewhite;
 }
 nav{
-    height: 80px;
-    background: #111;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0px 50px 0px 100px;
+    padding: 15px 5px;
+    align-items: center;
+    
+}
+ul li{
+    display: inline-block;
 }
 h4{
-   
-    color: white;
-    font-weight: 400;
+    font-size: 12px;
     border: 1px solid white;
-   text-align: center;
-   padding-top: 3px;
-   height: 20px;
-   width: 120px;
-   font-size: 8px;
-   
+    padding: 1px;
+    color: #fff;
 }
-nav ul{
-display: flex;
-list-style: none;
-
+a:hover,
+a.active{
+    border-bottom: 1px solid wheat;
+    padding-bottom: 1px;
 }
-nav ul li{
-    margin: 0 5px;
+#icon i{
+color: #fff;
+height: 25px;
 }
-nav ul li a{
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 1px;
-
-}
-nav ul li a.active{
-     border-bottom: 1px solid white;
-}
-nav .menu-btn i{
-    color: white;
-    font-size: 22px;
-    cursor: pointer;
+#icon,
+#checkbox{
     display: none;
 }
-
-
-@media screen and (max-width: 800px){
-    nav .menu-btn i{
-        display: block;
-
+@media screen and (max-width:700px){
+    nav{
+        border-bottom: 1px solid black;
+        padding: 10px 20px;
     }
-    nav ul{
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        background: #111;
-        height: 100vh;
+
+    ul{
+        position: absolute;
         width: 100%;
-        display: block;
+        height: calc(100vh - 50px);
+        /* background-color: teal; */
+        left: 0;
+        top: 0;
         text-align: center;
-        transition: all 0.3s ease;
+        margin-top: 50px;
+        display: none;
     }
-    #click:checked ~ ul{
-        left: 0%;
+    ul li{
+        display: block;
+        padding: 10px 15px;
     }
-    nav ul li{
-        margin: 40px 0;
+    ul li a{
+        display: block;
+        padding: 10px 0;
 
     }
-    nav ul li a{
-        font-size: 20px;
+    a.active{
+        border-bottom: none;
+    }
+    #icon{
         display: block;
     }
-    nav ul li a:hover{
-        color: aqua;
-        
+    #checkbox:checked~ul{
+        display: block;
     }
-    nav ul li a.active{
-        border-bottom: 0.1px solid #111;
-    }
-  
 }
